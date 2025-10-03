@@ -2,26 +2,32 @@
   "name": "dcrayons-main-app",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "main": "package.json",
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.19 <22 || >=22.12"
+  },
   "scripts": {
     "dev": "sanity dev",
-    "start": "sanity start",
+    "start": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy-graphql": "sanity graphql deploy",
+    "migrate": "sanity migration run"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
     "@sanity/client": "^7.2.1",
-    "@sanity/vision": "^3.72.1",
+    "@sanity/icons": "3.7.4",
+    "@sanity/ui": "3.1.8",
+    "@sanity/vision": "4.10.2",
     "dotenv": "^16.5.0",
-    "jq": "^1.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanity": "^3.72.1",
+    "sanity": "4.10.2",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
