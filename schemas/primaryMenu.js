@@ -16,24 +16,24 @@ export const primaryMenu = defineType({
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'Label',
         maxLength: 96,
       },
       description: 'Generate a URL-friendly slug for the career detail.',
     }),
     defineField({
-        name: 'type',
-        title: 'Type',
-        type: 'string',
-        description: 'Select the type of menu item.',
-        options: {
-          list: [
-            { title: 'Link', value: 'link' },
-            { title: 'Dropdown', value: 'dropdown' },
-            { title: 'Mega Menu', value: 'megaMenu' },
-          ],
-        },
-      }),
+      name: 'type',
+      title: 'Type',
+      type: 'string',
+      description: 'Select the type of menu item.',
+      options: {
+        list: [
+          { title: 'Link', value: 'link' },
+          { title: 'Dropdown', value: 'dropdown' },
+          { title: 'Mega Menu', value: 'megaMenu' },
+        ],
+      },
+    }),
     defineField({
       name: 'items',
       title: 'Menu Items',

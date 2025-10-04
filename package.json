@@ -14,11 +14,12 @@
     "build": "sanity build",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
-    "migrate": "sanity migration run"
+    "migrate": "sanity migration run",
+    "schemas:check": "node scripts/validate-schemas.mjs",
+    "scan:deprecated": "node scripts/scan-deprecated.mjs",
+    "schemas:fix": "node scripts/fix-schemas.mjs",
+    "schemas:autogen": "node scripts/generate-schema-index.mjs"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
     "@sanity/client": "^7.2.1",
     "@sanity/icons": "3.7.4",
@@ -28,7 +29,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanity": "4.10.2",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.1",

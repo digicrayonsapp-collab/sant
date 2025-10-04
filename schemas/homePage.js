@@ -1,4 +1,4 @@
-import { defineField, defineLocaleResourceBundle, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity';
 
 export const homePage = defineType({
   name: 'home',
@@ -19,9 +19,10 @@ export const homePage = defineType({
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'name', 
+        source: 'name',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'uri',
@@ -54,7 +55,7 @@ export const homePage = defineType({
         of: [
           {
             type: 'reference',
-            to: [{ type: 'ServiceLanding' }],
+            to: [{ type: 'servicesLanding' }],
           },
         ],
         description: 'Reference multiple blog posts.',

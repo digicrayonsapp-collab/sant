@@ -19,6 +19,7 @@ export const gigLanding = defineType({
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
       description: 'Generate a URL-friendly slug for the career detail.',
     }),
     defineField({

@@ -13,7 +13,7 @@ export const influencerLanding = defineType({
       to: [{ type: 'serviceBannerBlock' }],
       description: 'Reference the service banner block.',
     },
-    {
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -22,7 +22,8 @@ export const influencerLanding = defineType({
         maxLength: 200,
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
-    },
+      validation: (Rule) => Rule.required(),
+    }),
     {
       name: 'ourInfluencers',
       title: 'Our Influencers',

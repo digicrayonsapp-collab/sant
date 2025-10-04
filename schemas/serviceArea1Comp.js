@@ -29,7 +29,7 @@ export const serviceArea1Block = defineType({
       name: 'serviceReferences',
       title: 'Service References',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'ServiceLanding' }] }],
+      of: [{ type: 'reference', to: [{ type: 'servicesLanding' }] }],
     }),    
   ],
 });

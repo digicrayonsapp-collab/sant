@@ -1,4 +1,3 @@
-// sanity.config.js
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
@@ -14,7 +13,5 @@ export default defineConfig({
     structureTool({structure: defaultStructure}),
     visionTool()
   ],
-  schema: {
-    types: schemaTypes
-  }
+  schema: {types: schemaTypes}
 })

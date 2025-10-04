@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import RatingListener from '../utils/RatingsListner'
+import RatingListener from '../utils/RatingsListner.js'
 
 export const Orders = defineType({
   name: 'Orders',
@@ -183,3 +183,4 @@ export const Orders = defineType({
     }),
   ],
 })
+

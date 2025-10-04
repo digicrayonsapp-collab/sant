@@ -1,10 +1,18 @@
 import {defineField, defineType} from 'sanity'
 
 export const ServicesLanding = defineType({
-  name: 'ServiceLanding',
+  name: 'servicesLanding',
   title: 'Services',
   type: 'document',
   fields: [
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      description: 'Enter the URL-friendly version of the service title.',
+      options: {source: 'title', maxLength: 96},
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: 'title',
       title: 'Title',
@@ -22,16 +30,6 @@ export const ServicesLanding = defineType({
       title: 'Service Icon Image',
       type: 'image',
       description: 'Enter the Image of the thumbnail image for the service.',
-    }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      description: 'Enter the URL-friendly version of the service title.',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
     }),
     defineField({
       name: 'uri',
@@ -140,10 +138,10 @@ export const ServicesLanding = defineType({
       of: [
         {
           type: 'reference',
-          to: [{type: 'ServiceLanding'}],
+          to: [{type: 'servicesLanding'}],
         },
       ],
-      description: 'Select multiple services from the ServiceLanding document.',
+      description: 'Select multiple services from the servicesLanding document.',
     }),
 
     defineField({

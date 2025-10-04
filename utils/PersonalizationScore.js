@@ -1,13 +1,12 @@
-import React, {useEffect, useState} from 'react'
-import {useFormValue, useClient, useFormCallbacks} from 'sanity'
-import {TextInput} from '@sanity/ui'
-import {set, unset} from 'sanity'
+import React, { useEffect } from 'react'
+import { TextInput } from '@sanity/ui'
+import { set, unset, useClient, useFormCallbacks, useFormValue } from 'sanity'
 
 export default function PersonalizationScoreInput(props) {
-  const {value, onChange} = props
+  const { value, onChange } = props
 
-  const client = useClient({apiVersion: '2021-10-21'})
-  const {setFieldValue} = useFormCallbacks()
+  const client = useClient({ apiVersion: '2021-10-21' })
+  const { setFieldValue } = useFormCallbacks()
 
   const reviewCount = useFormValue(['reviewCount'])
   const profileScore = useFormValue(['profileScore'])
@@ -16,8 +15,8 @@ export default function PersonalizationScoreInput(props) {
   const categories = useFormValue(['categories'])
   const tags = useFormValue(['tags'])
   const orders = useFormValue(['orders'])
-  const averageRating = useFormValue(['averageRating']);
- 
+  const averageRating = useFormValue(['averageRating'])
+
   useEffect(() => {
     let followersNum = 0
 
@@ -70,14 +69,18 @@ export default function PersonalizationScoreInput(props) {
     onChange,
   ])
 
-  return (
-    <>
-      <TextInput
-        value={value === null || value === undefined ? 0 : value}
-        readOnly
-        onChange={onChange}
-      />
-      <p style={{color: 'gray'}}>Debug: Score component loaded</p>
-    </>
+  return React.createElement(
+    React.Fragment,
+    null,
+    React.createElement(TextInput, {
+      value: value ?? 0,
+      readOnly: true,
+      onChange,
+    }),
+    React.createElement(
+      'p',
+      { style: { color: 'gray' } },
+      'Debug: Score component loaded'
+    )
   )
 }

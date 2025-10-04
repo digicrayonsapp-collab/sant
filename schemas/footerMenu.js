@@ -16,7 +16,7 @@ export const footerMenu = defineType({
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'Label',
         maxLength: 96,
       },
       description: 'Generate a URL-friendly slug for the career detail.',

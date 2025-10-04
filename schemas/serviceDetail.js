@@ -49,10 +49,10 @@ export const servicesDetail = defineType({
       of: [
         {
           type: 'reference',
-          to: [{ type: 'ServiceLanding' }],
+          to: [{ type: 'servicesLanding' }],
         },
       ],
-      description: 'Select multiple services from the ServiceLanding document.',
+      description: 'Select multiple services from the servicesLanding document.',
     }),
     defineField({
       name: 'clients',

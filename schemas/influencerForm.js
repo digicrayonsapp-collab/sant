@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
-import ProfileScoreInput from '../utils/ProfileScoreInput'
-import PersonalizationScoreInput from '../utils/PersonalizationScore'
-import RatingListener from "../utils/RatingsListner";
+import ProfileScoreInput from '../utils/ProfileScoreInput.js'
+import PersonalizationScoreInput from '../utils/PersonalizationScore.js'
+import RatingListener from '../utils/RatingsListner.js'
 
 export const influencerForm = defineType({
   name: 'influencerForm',
@@ -346,3 +346,4 @@ export const influencerForm = defineType({
     },
   ],
 })
+

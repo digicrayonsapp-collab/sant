@@ -18,6 +18,7 @@ export const faqPage = defineType({
         source: 'heading',
         maxLength: 200,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'uri',
@@ -71,10 +72,10 @@ export const faqPage = defineType({
           type: 'string',
         }),
         defineField({
-            name: 'metaImage',
-            title: 'Meta Image',
-            type: 'image',
-          }),
+          name: 'metaImage',
+          title: 'Meta Image',
+          type: 'image',
+        }),
       ],
     }),
   ],

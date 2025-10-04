@@ -16,7 +16,7 @@ export const blogCategoriesBlock = defineType({
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'name',
         maxLength: 96,
       },
       description: 'Generate a URL-friendly slug for the career detail.',

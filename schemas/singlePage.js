@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import {defineField, defineType} from 'sanity'
 
 export const singlePage = defineType({
   name: 'single-page',
@@ -9,15 +9,17 @@ export const singlePage = defineType({
       name: 'heading',
       title: 'Heading',
       type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'heading',
+        source: (doc) => doc.heading,
         maxLength: 200,
       },
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'uri',
@@ -29,7 +31,7 @@ export const singlePage = defineType({
       name: 'markup',
       title: 'Markup',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{type: 'block'}],
     }),
     defineField({
       name: 'globalMeta',
@@ -47,11 +49,11 @@ export const singlePage = defineType({
           type: 'string',
         }),
         defineField({
-            name: 'metaImage',
-            title: 'Meta Image',
-            type: 'image',
-          }),
+          name: 'metaImage',
+          title: 'Meta Image',
+          type: 'image',
+        }),
       ],
-    })
+    }),
   ],
-});
+})

@@ -19,6 +19,7 @@ export const aiLanding = defineType({
         source: 'title',
         maxLength: 200,
       },
+      validation: (Rule) => Rule.required(),
       description: 'Enter or generate a unique slug for the service.',
     }),
     defineField({
@@ -27,7 +28,7 @@ export const aiLanding = defineType({
       type: 'string',
       description: 'Enter the URI of the page',
     }),
-     defineField({
+    defineField({
       name: 'blogs',
       title: 'Blogs',
       type: 'object',
@@ -46,18 +47,17 @@ export const aiLanding = defineType({
         }),
       ],
     }),
-     defineField({
-        name: 'blogPost',
-        title: 'Blog Posts',
-        type: 'array',
-        of: [
-          {
-            type: 'reference',
-            to: [{ type: 'posts' }],
-          },
-        ],
-        description: 'Reference multiple blog posts.',
-      }), 
-   
+    defineField({
+      name: 'blogPost',
+      title: 'Blog Posts',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'posts' }],
+        },
+      ],
+      description: 'Reference multiple blog posts.',
+    }),
   ],
 });

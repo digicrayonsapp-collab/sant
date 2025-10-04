@@ -13,6 +13,7 @@ export const signup = defineType({
         source: 'heading',
         maxLength: 200,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
         name: 'categoryBanner',

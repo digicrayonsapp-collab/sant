@@ -1,7 +1,3 @@
-// schemas/index.js
-// Sanity v4 schema registry
-// If you add a new schema file, import it here and add to schemaTypes.
-
 import { singlePage } from './singlePage.js'
 import { about } from './about.js'
 import { testimonial } from './testimonialRepeater.js'
@@ -66,7 +62,7 @@ import { influencerRatings } from './influencerRatings.js'
 import { ImageWithDescriptionComp } from './ImageWithDescriptionComp.js'
 import { ClientsAndAwardsComp } from './ClientsAndAwardsComp.js'
 import { serviceBlogsComp } from './ServiceBlogsComp.js'
-import { serviceHero } from './serviceHero.jsx'
+import { serviceHero } from './serviceHero.js'
 import { aiImage } from './aiImage.js'
 import { aiLanding } from './aiPromptLanding.js'
 import { toolDetail } from './tools.js'
@@ -75,6 +71,11 @@ import { Videos } from './video.js'
 import { Technologies } from './technology.js'
 import { TechnologyLanding } from './technologyLanding.js'
 
+import { consumerProductsIndustryBlock } from './consumerProductsIndustryComp.js'
+import { homePage as homepageDocument } from './homeType.js'
+import { Services } from './Services.js'
+import { twoImageTwoComponent } from './twoImageTwoContentComp.js'
+
 // Grouped for sanity (ha)
 export const schemaTypes = [
   // ***** Core pages *****
@@ -82,6 +83,7 @@ export const schemaTypes = [
   singlePage,          // <-- previously missing; now registered
   landingPage,
   defaultTemplate,
+  homepageDocument,
 
   // ***** Navigation *****
   primaryMenu,
@@ -105,6 +107,7 @@ export const schemaTypes = [
   serviceBannerBlock,
   servicePricing,
   serviceBlogsComp,
+  Services,
 
   // ***** Careers *****
   careerLanding,
@@ -161,6 +164,7 @@ export const schemaTypes = [
   Videos,
   ImageWithDescriptionComp,
   titleWithTwoContentBlock,
+  twoImageTwoComponent,
 
   // ***** AI *****
   aiLanding,
@@ -177,6 +181,7 @@ export const schemaTypes = [
   bannerImageTwoContent,
 
   // ***** Industry *****
+  consumerProductsIndustryBlock,
   industryDetail
 ]
 
